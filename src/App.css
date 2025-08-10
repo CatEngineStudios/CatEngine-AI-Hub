@@ -1,0 +1,191 @@
+/* Reset & base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #fafafa;
+    border-right: 1px solid #ccc;
+    padding: 1rem;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Main chat */
+.main-chat {
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    color: #222;
+    overflow-y: auto;
+}
+
+/* Buttons */
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+.dark-mode-toggle {
+    background-color: #eee;
+    color: #444;
+}
+
+    .dark-mode-toggle:hover {
+        background-color: #ccc;
+    }
+
+/* Scrollbar light */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
+}
+
+
+/* ======== DARK MODE ======== */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+    body.dark-mode .app-container {
+        background-color: #121212;
+        color: #ddd;
+    }
+
+    body.dark-mode .sidebar {
+        background-color: #1f1f1f;
+        border-color: #333;
+        color: #ddd;
+    }
+
+    body.dark-mode .main-chat {
+        background-color: #181818;
+        color: #ddd;
+    }
+
+    /* Buttons dark */
+    body.dark-mode button {
+        background-color: #333;
+        color: #eee;
+    }
+
+        body.dark-mode button:hover {
+            background-color: #555;
+        }
+
+    body.dark-mode .dark-mode-toggle {
+        background-color: #444;
+        color: #eee;
+    }
+
+        body.dark-mode .dark-mode-toggle:hover {
+            background-color: #666;
+        }
+
+    /* Scrollbar dark */
+    body.dark-mode ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    body.dark-mode ::-webkit-scrollbar-track {
+        background: #1f1f1f;
+    }
+
+    body.dark-mode ::-webkit-scrollbar-thumb {
+        background-color: #555;
+        border-radius: 4px;
+    }
+
+
+/* --- API Key Input --- */
+.api-key-input {
+    flex-grow: 1;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+    .api-key-input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+.api-key-toggle {
+    cursor: pointer;
+    padding: 0 6px;
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+/* --- Model Select Dropdown --- */
+.model-select {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+    .model-select:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+/* --- Chat Dropdown --- */
+.chat-dropdown {
+    width: 100%;
+    padding: 6px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+    .chat-dropdown:focus {
+        outline: none;
+        border-color: #007bff;
+    }
