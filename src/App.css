@@ -189,3 +189,246 @@ body.dark-mode {
         outline: none;
         border-color: #007bff;
     }
+.coder-output-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.coder-box {
+  flex: 1;
+  background: var(--code-bg, #1e1e1e);
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  overflow-x: auto;
+}
+
+.judge-output {
+  background: var(--chat-bg, #2a2a2a);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.message-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message-input textarea {
+  width: 100%;
+  height: 60px;
+  resize: none;
+}
+
+/* --- Themed form bits for the sidebar --- */
+.sidebar .settings-card {
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+
+.sidebar.dark .settings-card {
+    border-color: #334155;
+    background: #111827;
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+}
+
+.sidebar .field {
+    margin-bottom: 14px;
+}
+
+.sidebar .field-label {
+    font-size: 12px;
+    letter-spacing: .02em;
+    color: #6b7280;
+    margin: 0 0 6px;
+    text-transform: uppercase;
+}
+
+.sidebar.dark .field-label {
+    color: #9ca3af;
+}
+
+.sidebar .input-wrap, .sidebar .select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 1px 0 rgba(0,0,0,.02);
+}
+
+.sidebar.dark .input-wrap, .sidebar.dark .select-wrap {
+    border-color: #334155;
+    background: #0b1220;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 1px 0 rgba(0,0,0,.2);
+}
+
+.sidebar .input, .sidebar .select {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #111827;
+    font-size: 14px;
+}
+
+.sidebar.dark .input, .sidebar.dark .select {
+    color: #e5e7eb;
+}
+
+.sidebar .left-icon {
+    opacity: .8;
+}
+
+.sidebar .icon-btn {
+    border: none;
+    background: #eef2ff;
+    color: #1d4ed8;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar.dark .icon-btn {
+    background: #1f2937;
+    color: #93c5fd;
+}
+
+.sidebar .select-wrap {
+    position: relative;
+}
+
+    .sidebar .select-wrap .chevron {
+        position: absolute;
+        right: 10px;
+        pointer-events: none;
+        opacity: .7;
+    }
+
+.sidebar .help {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 6px;
+}
+
+.msg-row {
+    display: flex;
+    margin: 6px 0;
+}
+
+    .msg-row.user {
+        justify-content: flex-start;
+    }
+    /* user LEFT */
+    .msg-row.assistant {
+        justify-content: flex-end;
+    }
+/* assistant RIGHT (or also left if you want) */
+
+.msg-bubble {
+    max-width: 84%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bubble);
+}
+
+/* optional theme vars */
+.sidebar.dark .msg-bubble {
+    --border: #374151;
+    --bubble: #1f2937;
+    color: #e5e7eb;
+}
+
+.sidebar .msg-row.user .msg-bubble {
+    --border: #e5e7eb;
+    --bubble: #eef2f7;
+    color: #111827;
+}
+
+.sidebar .msg-row.assistant .msg-bubble {
+    --border: #e5e7eb;
+    --bubble: #ffffff;
+    color: #111827;
+}
+
+/* Dark theme scrollbars (Firefox + WebKit) */
+.theme-dark,
+.theme-dark * {
+    /* Firefox: thumb color then track color */
+    scrollbar-color: #334155 #0b1220;
+}
+
+    /* WebKit (Chrome/Edge/Safari) */
+    .theme-dark ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .theme-dark ::-webkit-scrollbar-track {
+        background: #0b1220; /* track */
+    }
+
+    .theme-dark ::-webkit-scrollbar-thumb {
+        background: #334155; /* thumb */
+        border-radius: 8px;
+        border: 2px solid #0b1220; /* creates padding effect */
+    }
+
+        .theme-dark ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+/* (Optional) Light theme scrollbars for consistency */
+:root,
+:root * {
+    scrollbar-color: #cbd5e1 #f8fafc; /* Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+    border: 2px solid #f8fafc;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: .55;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes gradientShift {
+    0%,100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+}

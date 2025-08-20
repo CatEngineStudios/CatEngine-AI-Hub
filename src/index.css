@@ -7,6 +7,39 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* <-- page-level scrollbars OFF */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Only the inner panes should scroll */
+.scroll-y {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Defensive: long content won’t widen the page */
+.message {
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+    .message pre, .message code {
+        max-width: 100%;
+        overflow: auto;
+        white-space: pre;
+    }
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -56,3 +89,42 @@ pre {
     overflow-x: auto;
     font-family: 'Source Code Pro', monospace;
 }
+
+/* ---- THEME VARIABLES ---- */
+:root {
+    --scroll-track: #f8fafc;
+    --scroll-thumb: #cbd5e1;
+    --scroll-thumb-hover: #94a3b8;
+}
+
+html.theme-dark {
+    --scroll-track: #0b1220;
+    --scroll-thumb: #334155;
+    --scroll-thumb-hover: #475569;
+}
+
+/* ---- FIREFOX (uses scrollbar-color) ---- */
+* {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* ---- WEBKIT (Chrome/Edge/Safari) ---- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 8px;
+    border: 2px solid var(--scroll-track); /* creates "padding" */
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--scroll-thumb-hover);
+    }
+
