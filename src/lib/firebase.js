@@ -12,14 +12,15 @@ import { getFirestore } from 'firebase/firestore';
 
 // --- Your Firebase web app config (from your message) ---
 const firebaseConfig = {
-    apiKey: 'AIzaSyC93yPNBj9YgQzZT5WYesAWJ-xbiiyGRUw',
-    authDomain: 'catengine-ai-hub.firebaseapp.com',
-    projectId: 'catengine-ai-hub',
-    storageBucket: 'catengine-ai-hub.firebasestorage.app',
-    messagingSenderId: '642106594977',
-    appId: '1:642106594977:web:068690f0d296e03537c2e0',
-    measurementId: 'G-ECD8BCCKMD',
+  apiKey: "YOUR_API_KEY_HERE",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
+
 
 // Init
 const app = initializeApp(firebaseConfig);
@@ -47,3 +48,4 @@ export function onUser(cb) {
     // Returns the unsubscribe function from onAuthStateChanged
     return onAuthStateChanged(auth, (user) => cb(user));
 }
+
